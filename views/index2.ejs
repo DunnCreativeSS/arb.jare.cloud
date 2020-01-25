@@ -19,6 +19,11 @@
 <br><br></span>
 <a href='https://github.com/DunnCreativeSS/arb.jare.cloud'>Github Repository</a><br><br>
 
+<form action='/' method='POST'> 
+  Arbitrage search query: <input type="text" name="query"><br>
+  <input type="submit" value="Submit">
+
+</form>
 When you submit, wait about 10 seconds! Don't submit again until the page refreshes!<br>
 Try one or maybe two worded searches. The ebay api is limited.<br>
 Looking for inspiration? Try searching sandisk or snes!<br>
@@ -26,11 +31,6 @@ Looking for inspiration? Try searching sandisk or snes!<br>
 SEARCH RESULTS are BELOW the Amazon Ad. You'll see three columns: Ebay item on left, a comparison and potential earnings in the middle, and Aliexpress on the right!<br>
 <input type="hidden" name="IL_IN_ARTICLE">
 
-<form action='/' method='POST'> 
-  Arbitrage search query: <input type="text" name="query"><br>
-  <input type="submit" value="Submit">
-
-</form>
 <script>
 var string1 = JSON.stringify(<%- ebay %>)
 var string2 = JSON.stringify(<%- aliexpress %>)
