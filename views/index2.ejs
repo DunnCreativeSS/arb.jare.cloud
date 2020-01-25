@@ -1,7 +1,18 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152704802-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152704802-1');
+</script>
 
 </head>
+</head>
+<a href='https://github.com/DunnCreativeSS/arb.jare.cloud'>Github Repository</a><br><br>
 <form action='/' method='POST'> 
   Arbitrage search query: <input type="text" name="query"><br>
   <input type="submit" value="Submit">
@@ -72,7 +83,6 @@ var tds3 = []
 
 </style>
 <div class="row">
-<table id='table'>
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_search_bar = "true";
@@ -83,11 +93,13 @@ amzn_assoc_ad_type = "smart";
 amzn_assoc_marketplace = "amazon";
 amzn_assoc_region = "US";
 amzn_assoc_title = "support getting amazon in this tool! buy these amazons here!";
-amzn_assoc_default_search_phrase = <%- search %>;
+amzn_assoc_default_search_phrase = "<%- search %>";
 amzn_assoc_default_category = "All";
 amzn_assoc_linkid = "5fefc6e8043e150e11dd8bf22ac47def";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+
+<table id='table'>
 </table>
   <div id='ebay' class="column"></div>
   <div id='compare' class="column"></div>
