@@ -22,6 +22,11 @@ http://arb.jare.cloud
 
 
 
+0.01.05: added search text help
+
+
+
+
 ## Todo:
 
 1. Get Amazon affiliate sales. 
