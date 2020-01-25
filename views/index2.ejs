@@ -1,0 +1,95 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<form action='/' method='POST'> 
+  Arbitrage search query: <input type="text" name="query"><br>
+  <input type="submit" value="Submit">
+
+</form>
+<script>
+var string1 = JSON.stringify(<%- ebay %>)
+var string2 = JSON.stringify(<%- aliexpress %>)
+var ebay = JSON.parse(string1)	
+
+var aliexpress = JSON.parse(string2)
+
+  console.log(ebay)
+  console.log(aliexpress)
+  
+  function GetSortOrder(prop) {  
+    return function(a, b) {  
+        if (a[prop] > b[prop]) {  
+            return 1;  
+        } else if (a[prop] < b[prop]) {  
+            return -1;  
+        }  
+        return 0;  
+    }  
+}  
+  
+ebay.sort(GetSortOrder("price")); //Pass the attribute to be sorted on  
+
+aliexpress.sort(GetSortOrder("price")); //Pass the attribute to be sorted on  
+  
+  </script>
+  <script>
+  $( document ).ready(function() {
+var compare1 = []
+var tds2 = []
+var tds1 = []
+var tds3 = []
+  for (var a in aliexpress){
+	tds3.push('Aliexpress <span style="font-size:48">' + aliexpress[a].price + ' $USD!</span> <img width="200px" height="200px" src="'+aliexpress[a].img+'" /><br><a href="' + aliexpress[a]['affiliate url'] + '">' + aliexpress[a].title + '<br><br></a>')
+  compare1.push(aliexpress[a].price)
+  }
+  
+  for (var e in ebay){
+	tds1.push('Ebay <span style="font-size:48">' + ebay[e].price + ' $USD!</span> <img width="200px" height="200px" src="'+ebay[e].img+'" /><br><a href="' + ebay[e]['affiliate url'] + '">' + ebay[e].title + '<br><br></a>')
+	var compare = (parseFloat(ebay[e].price) / parseFloat(compare1[e]) - 1 ) * 100 
+	var compare2 = parseFloat(ebay[e].price) - parseFloat(compare1[e])
+	tds2.push('<br><br><br><span style="font-size: 48;">Similarity: ' + (ebay[e].similarity * 100).toPrecision(4) + '%! Make ' + compare.toPrecision(4) + '% or ' + compare2.toPrecision(4) + '$!</span><br><br><br><br><br><br><br>') 
+  }
+  for (var t in tds1){
+  $("#table").append('<tr><td>' + tds1[t] + '</td><td>' + tds2[t] + '</td><td>' + tds3[t] + '</td></tr>')
+  }
+  })
+  </script>
+
+<style>
+
+.column {
+  float: left;
+  width: 33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+<div class="row">
+<table id='table'>
+<script type="text/javascript">
+amzn_assoc_placement = "adunit0";
+amzn_assoc_search_bar = "true";
+amzn_assoc_tracking_id = "jarettdunn-20";
+amzn_assoc_search_bar_position = "bottom";
+amzn_assoc_ad_mode = "search";
+amzn_assoc_ad_type = "smart";
+amzn_assoc_marketplace = "amazon";
+amzn_assoc_region = "US";
+amzn_assoc_title = "support getting amazon in this tool! buy these amazons here!";
+amzn_assoc_default_search_phrase = <%- search %>;
+amzn_assoc_default_category = "All";
+amzn_assoc_linkid = "5fefc6e8043e150e11dd8bf22ac47def";
+</script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+</table>
+  <div id='ebay' class="column"></div>
+  <div id='compare' class="column"></div>
+  <div id='aliexpress' class="column"></div>
+</div>
