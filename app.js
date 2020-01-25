@@ -75,7 +75,7 @@ function ali(keywords, res, aliobjs, ebayobjs) {
     keywords = encodeURIComponent(keywords)
 	for (var i = 1; i <= 50; i++){
 		console.log(i)
-    var url = "http://gw.api.alibaba.com/openapi/param2/2/portals.open/api.listPromotionProduct/76080?pageNo=" + i + "&sort=volumeDown&fields=salePrice,productTitle,volume,imageUrl,productUrl&keywords=" + keywords;
+    var url = "http://gw.api.alibaba.com/openapi/param2/2/portals.open/api.listPromotionProduct/"+process.env.ali+"?pageNo=" + i + "&sort=volumeDown&fields=salePrice,productTitle,volume,imageUrl,productUrl&keywords=" + keywords;
     //console.log('keywords?: ' + url);
     var responses = new Array();
     try {
@@ -163,7 +163,7 @@ var once = true;
 
 function dosearchurl(id, title, img, price, aliobjs) {
     price = parseFloat(price.substring(4, price.length))
-    var url2 = "http://gw.api.alibaba.com/openapi/param2/2/portals.open/api.getPromotionLinks/76080?fields=promotionUrl&trackingId=4632&urls=" + id;
+    var url2 = "http://gw.api.alibaba.com/openapi/param2/2/portals.open/api.getPromotionLinks/"+process.env.ali+"?fields=promotionUrl&trackingId=4632&urls=" + id;
     var responses = new Array();
     try {
         var result3 = request.get(url2, function(e, r, result3) {
