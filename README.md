@@ -26,6 +26,10 @@ http://arb.jare.cloud
 
 
 
+0.01.06: added infolinks ads
+
+
+
 
 ## Todo:
 
