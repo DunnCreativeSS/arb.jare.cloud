@@ -4,8 +4,7 @@
 http://arb.jare.cloud
 
 
-Changelog: 
-
+## Changelog: 
 
 0.01.01: initial commit. Live. Works with Aliexpress and Ebay. Earns thru affiliate $. 
 
@@ -16,3 +15,13 @@ Changelog:
 
 
 0.01.03: Added Git link to result page. Added Google Analytics tracking.
+
+
+
+## Todo:
+
+1. Get Amazon affiliate sales. 
+
+
+
+2. Implement Amazon affiliate API for third aggregate source.
