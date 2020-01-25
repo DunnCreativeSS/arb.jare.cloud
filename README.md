@@ -18,6 +18,10 @@ http://arb.jare.cloud
 
 
 
+0.01.04: added try{ catch(){ for some errors
+
+
+
 ## Todo:
 
 1. Get Amazon affiliate sales. 

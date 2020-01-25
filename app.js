@@ -167,7 +167,7 @@ function dosearchurl(id, title, img, price, aliobjs) {
     var responses = new Array();
     try {
         var result3 = request.get(url2, function(e, r, result3) {
-
+try{
             var json = JSON.parse(result3)
             obj = {
                 'site': 'aliexpress',
@@ -177,7 +177,9 @@ function dosearchurl(id, title, img, price, aliobjs) {
                 'price': price
             }
             aliobjs.push(obj)
-        })
+}
+catch(err){}    
+    })
 
     } catch (e) {
         //console.log('exception: ' + e.toString());
